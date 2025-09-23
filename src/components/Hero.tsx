@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { ArrowDown, Mail, Github, Linkedin, MapPin, Star, Sparkles } from 'lucide-react';
-import profileImage from '@/assets/mohammad-ayan-profile.jpg';
+import profileImage from '@/assets/mohammad-ayan-portrait.jpg';
 
 const Hero = () => {
   const scrollToContact = () => {
