@@ -8,7 +8,7 @@ const Portfolio = () => {
       title: "Unimanage",
       subtitle: "Student Management System",
       description: "A comprehensive student management system for educational institutions featuring student registration, search functionality, and complete student listing. Built with modern web technologies for efficient data management.",
-      image: "/api/placeholder/600/400",
+      image: "/projects/Unimanage_home_page.png",
       tech: ["HTML", "CSS", "JavaScript", "Node.js", "Express.js", "PostgreSQL", "pgAdmin"],
       features: [
         "Student Registration System",
@@ -27,7 +27,7 @@ const Portfolio = () => {
       title: "Ingreedy",
       subtitle: "Recipe Discovery Web App",
       description: "An innovative recipe web application that fetches recipes based on available ingredients, promotes minimal food waste, and provides seasonal cooking suggestions. Perfect for sustainable cooking practices.",
-      image: "/api/placeholder/600/400",
+      image: "/projects/ingreedy_home_page.png",
       tech: ["HTML", "CSS", "JavaScript", "API Integration"],
       features: [
         "Ingredient-Based Recipe Search",
@@ -65,10 +65,13 @@ const Portfolio = () => {
               <div className={`${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
                 <Card className="border-0 shadow-xl overflow-hidden group">
                   <CardContent className="p-0">
-                    <div className="relative aspect-video bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center">
-                      <div className={`p-8 bg-gradient-to-br ${project.gradient} rounded-full`}>
-                        {project.icon}
-                      </div>
+                    <div className="relative aspect-video flex items-center justify-center overflow-hidden rounded-lg">
+                      {/* Project Image */}
+                      <img 
+                        src={project.image} 
+                        alt={project.title} 
+                        className="w-full h-full object-cover transition-transform group-hover:scale-105"
+                      />
                       {/* Overlay on hover */}
                       <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
                         <Button size="sm" variant="secondary" asChild>
@@ -88,6 +91,7 @@ const Portfolio = () => {
                   </CardContent>
                 </Card>
               </div>
+
 
               {/* Project Details */}
               <div className={`space-y-6 ${index % 2 === 1 ? 'lg:col-start-1' : ''}`}>
