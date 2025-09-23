@@ -87,7 +87,10 @@ const Hero = () => {
             <div className="mb-4">
               <p className="text-xl lg:text-2xl text-white/90 font-medium inline-block">
                 Web Developer
-                <span className="ml-1 animate-pulse text-secondary">|</span>
+                <span className="ml-1 animate-pulse text-secondary"> | </span>
+                Learner
+                <span className="ml-1 animate-pulse text-secondary"> | </span>
+
               </p>
             </div>
             
