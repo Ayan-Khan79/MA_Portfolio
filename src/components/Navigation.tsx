@@ -57,7 +57,7 @@ const Navigation = () => {
               variant="outline" 
               size="sm"
               className="btn-primary-gradient border-0 text-primary-foreground hover:scale-105 transition-transform"
-              onClick={() => window.open('#', '_blank')}
+              onClick={() => window.open('https://drive.google.com/file/d/1_NBMRHSvUgWbQhLfiJJJiaeLXJLidsjb/view?usp=sharing', '_blank')}
             >
               <Download className="w-4 h-4 mr-2" />
               Download CV

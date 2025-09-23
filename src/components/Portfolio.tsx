@@ -17,8 +17,8 @@ const Portfolio = () => {
         "Responsive Design"
       ],
       links: {
-        live: "#",
-        github: "#"
+        live: "https://unimanage.onrender.com/",
+        github: "https://github.com/Ayan-Khan79/Class-Student-Infromation"
       },
       icon: <Users className="w-8 h-8 text-primary" />,
       gradient: "from-primary/10 to-primary/5"
@@ -36,8 +36,8 @@ const Portfolio = () => {
         "User-Friendly Interface"
       ],
       links: {
-        live: "#",
-        github: "#"
+        live: "https://recipe-finder1-l4g8.onrender.com/",
+        github: "https://github.com/Ayan-Khan79/Recipe-Finder"
       },
       icon: <Utensils className="w-8 h-8 text-secondary" />,
       gradient: "from-secondary/10 to-secondary/5"
