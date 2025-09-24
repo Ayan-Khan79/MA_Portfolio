@@ -1,73 +1,49 @@
-# Welcome to your Lovable project
+# 🌐 Portfolio Website
+A modern and responsive personal portfolio website built with cutting-edge web technologies. Designed to showcase projects, skills, and achievements with a clean UI and smooth user experience.
 
-## Project info
+# 🚀 Tech Stack
+This project is built with: <br>
+⚡ Vite <br>
+ – Next-generation frontend tooling <br>
+📘 TypeScript <br>
+ – Type-safe JavaScript <br>
+⚛️ React <br>
+ – Component-based UI library <br>
+🎨 Tailwind CSS <br>
+ – Utility-first CSS framework <br>
+🧩 shadcn/ui <br>
+ – Re-usable, accessible components <br>
 
-**URL**: https://lovable.dev/projects/b7eeb131-e487-4178-bca3-c21a9e2b2811
+ # 📸 Preview
 
-## How can I edit this code?
+(Replace the above image with a screenshot or deployed link preview of your site)
 
-There are several ways of editing your application.
+# ✨ Features
 
-**Use Lovable**
+📱 Fully responsive design (desktop, tablet, mobile)
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/b7eeb131-e487-4178-bca3-c21a9e2b2811) and start prompting.
+🖼️ Interactive UI built with shadcn/ui
 
-Changes made via Lovable will be committed automatically to this repo.
+🎨 Styled with Tailwind CSS
 
-**Use your preferred IDE**
+⚡ Super-fast build with Vite
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+🛠️ Written in TypeScript for reliability
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+📂 Easy to customize and extend
 
-Follow these steps:
+# 📬 Contact
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+👤 Mohammad Ayan
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+Portfolio: https://ma-portfolio-6llp.onrender.com
 
-# Step 3: Install the necessary dependencies.
-npm i
+LinkedIn: www.linkedin.com/in/mohammadayan79
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+GitHub: https://github.com/Ayan-Khan79
 
-**Edit a file directly in GitHub**
+Email: mohammad.ayan9450@gmail.com
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+# ⭐ Show Your Support
 
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/b7eeb131-e487-4178-bca3-c21a9e2b2811) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+## If you like this project, don’t forget to star ⭐ the repository!
