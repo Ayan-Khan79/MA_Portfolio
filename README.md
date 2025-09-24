@@ -16,7 +16,10 @@ This project is built with: <br>
 
  # 📸 Preview
 
-(Replace the above image with a screenshot or deployed link preview of your site)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/d86827e3-f212-4787-90bf-6014445c7e5c" width="80%" alt="Portfolio Preview" />
+</p>
+
 
 # ✨ Features
 
