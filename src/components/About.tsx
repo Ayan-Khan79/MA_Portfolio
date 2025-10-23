@@ -125,7 +125,7 @@ const About = () => {
                   <div className="text-sm text-muted-foreground">Current CGPA</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">2+</div>
+                  <div className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">3+</div>
                   <div className="text-sm text-muted-foreground">Projects Built</div>
                 </div>
               </div>

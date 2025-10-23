@@ -1,9 +1,38 @@
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { ExternalLink, Github, Users, Utensils } from 'lucide-react';
+import { ExternalLink, Github, Users, Utensils, Activity } from 'lucide-react';
 
 const Portfolio = () => {
   const projects = [
+    {
+      title: "HabitFlow",
+      subtitle: "Personal Habit Tracking Web App",
+      description:
+        "HabitFlow is a full-stack habit tracking application designed to empower users to establish sustainable routines, monitor their progress, and maintain motivation through streak visualization. Leveraging a robust and modern tech stack, HabitFlow provides a fast, reliable, and beautiful platform for personal growth.",
+      image: "/projects/LogIn_Habitflow.png",
+      tech: [
+        "React",
+        "Node.js",
+        "Express.js",
+        "Shadcn UI",
+        "JWT Auth",
+        "PostgreSQL"
+      ],
+      features: [
+        "Customizable habit creation with flexible schedules.",
+        "Quick habit check-offs and effortless progress tracking.",
+        "Streak visualization to boost motivation and consistency.",
+        "Insightful dashboard with habit completion analytics.",
+        "Secure authentication ensuring data privacy.",
+        "Responsive, minimalist UI built with Shadcn UI."
+      ],
+      links: {
+        live: "https://habitflow-1-4x1z.onrender.com/",
+        github: "https://github.com/Ayan-Khan79/Habitflow"
+      },
+      icon: <Activity className="w-8 h-8 text-green-500" />,
+      gradient: "from-green-500/10 to-green-500/5"
+    },
     {
       title: "Unimanage",
       subtitle: "Student Management System",
@@ -41,7 +70,7 @@ const Portfolio = () => {
       },
       icon: <Utensils className="w-8 h-8 text-secondary" />,
       gradient: "from-secondary/10 to-secondary/5"
-    }
+    },
   ];
 
   return (
@@ -66,13 +95,11 @@ const Portfolio = () => {
                 <Card className="border-0 shadow-xl overflow-hidden group">
                   <CardContent className="p-0">
                     <div className="relative aspect-video flex items-center justify-center overflow-hidden rounded-lg">
-                      {/* Project Image */}
                       <img 
                         src={project.image} 
                         alt={project.title} 
                         className="w-full h-full object-cover transition-transform group-hover:scale-105"
                       />
-                      {/* Overlay on hover */}
                       <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
                         <Button size="sm" variant="secondary" asChild>
                           <a href={project.links.live} target="_blank" rel="noopener noreferrer">
@@ -91,7 +118,6 @@ const Portfolio = () => {
                   </CardContent>
                 </Card>
               </div>
-
 
               {/* Project Details */}
               <div className={`space-y-6 ${index % 2 === 1 ? 'lg:col-start-1' : ''}`}>
