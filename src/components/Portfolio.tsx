@@ -34,6 +34,29 @@ const Portfolio = () => {
       gradient: "from-green-500/10 to-green-500/5"
     },
     {
+      title: "Bitebox",
+      subtitle: "Crafted to showcase fine dining through modern design and seamless user experience",
+      description:
+        "Bitebox is a modern, fully responsive restaurant website built using React, Tailwind CSS, and React Router. It features a dynamic menu, reservation page, customer reviews, and a smooth single-page navigation experience. Designed with a premium aesthetic, it delivers a seamless dining-brand experience for users.",
+      image: "/projects/Bitebox.png",
+      tech: [
+        "React.js",
+        "Tailwind CSS"
+      ],
+      features: [
+        "Modern restaurant menu with categories and dynamic item display.",
+        "Online table reservation with an easy, guided booking flow.",
+        "Showcase customer reviews to build trust and credibility.",
+        "Fully responsive UI crafted with Tailwind for all screen sizes."
+      ],
+      links: {
+        live: "https://bitebox-1ly7.onrender.com",
+        github: "https://github.com/Ayan-Khan79/Bitebox"
+      },
+      icon: <Utensils className="w-8 h-8 text-red-500" />,
+      gradient: "from-red-500/10 to-red-500/5"
+    },
+    {
       title: "Unimanage",
       subtitle: "Student Management System",
       description: "A comprehensive student management system for educational institutions featuring student registration, search functionality, and complete student listing. Built with modern web technologies for efficient data management.",
