@@ -1,5 +1,5 @@
 import { Card, CardContent } from '@/components/ui/card';
-import { Code, Database, Globe, GitBranch, Server, Palette } from 'lucide-react';
+import { Code, Database, Globe, Server, Zap, ShieldCheck, Smartphone, BrainCircuit, BarChart3, Binary } from 'lucide-react';
 
 const Skills = () => {
   const skillCategories = [
@@ -7,37 +7,49 @@ const Skills = () => {
       title: "Frontend Development",
       icon: <Globe className="w-8 h-8 text-primary" />,
       skills: [
-        { name: "HTML", level: 95 },
-        { name: "CSS", level: 90 },
-        { name: "JavaScript", level: 85 },
-        { name: "React.js", level: 80 }
+        { name: "React.js & Hooks", level: 85 },
+        { name: "Tailwind CSS & Shadcn", level: 90 },
+        { name: "JavaScript (ES6+)", level: 85 },
+        { name: "Responsive Design", level: 95 }
       ]
     },
     {
-      title: "Backend Development", 
+      title: "Backend & Cloud", 
       icon: <Server className="w-8 h-8 text-secondary" />,
       skills: [
-        { name: "Node.js", level: 85 },
-        { name: "Express.js", level: 80 },
-        { name: "API Development", level: 85 }
+        { name: "Node.js & Express", level: 80 },
+        { name: "Firebase (Auth/Store)", level: 85 },
+        { name: "RESTful APIs", level: 85 },
+        { name: "JWT Authentication", level: 80 }
       ]
     },
     {
-      title: "Database & Tools",
-      icon: <Database className="w-8 h-8 text-accent" />,
+      title: "AI & Data Science",
+      icon: <BrainCircuit className="w-8 h-8 text-accent" />,
       skills: [
-        { name: "PostgreSQL", level: 75 },
-        { name: "pgAdmin", level: 70 },
-        { name: "Git/GitHub", level: 80 }
+        { name: "Python (NumPy/Pandas)", level: 80 },
+        { name: "Machine Learning Algos", level: 75 },
+        { name: "Matplotlib & Seaborn", level: 85 },
+        { name: "Deep Learning Basics", level: 65 }
+      ]
+    },
+    {
+      title: "Database & DevOps",
+      icon: <Database className="w-8 h-8 text-primary" />,
+      skills: [
+        { name: "PostgreSQL & NoSQL", level: 75 },
+        { name: "Git & Version Control", level: 90 },
+        { name: "Deployment (Vercel/Render)", level: 85 },
+        { name: "Cloud Infrastructure", level: 70 }
       ]
     }
   ];
 
   const additionalSkills = [
-    { name: "Problem Solving", icon: <Code className="w-5 h-5" /> },
-    { name: "Version Control", icon: <GitBranch className="w-5 h-5" /> },
-    { name: "UI/UX Design", icon: <Palette className="w-5 h-5" /> },
-    { name: "Team Collaboration", icon: <Globe className="w-5 h-5" /> }
+    { name: "Data Visualization", icon: <BarChart3 className="w-5 h-5" /> },
+    { name: "OTP Authentication", icon: <ShieldCheck className="w-5 h-5" /> },
+    { name: "Predictive Modeling", icon: <Binary className="w-5 h-5" /> },
+    { name: "Real-time Sync", icon: <Zap className="w-5 h-5" /> }
   ];
 
   return (
@@ -45,35 +57,36 @@ const Skills = () => {
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-            Skills & <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Expertise</span>
+            Technical <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Stack</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Technical skills and expertise gained through academic projects and practical experience
+            Combining Full-Stack expertise with Data Science to build 
+            intelligent, data-driven applications.
           </p>
         </div>
 
-        {/* Technical Skills */}
-        <div className="grid lg:grid-cols-3 gap-8 mb-16">
+        {/* Technical Skills Grid - Updated to 2x2 for 4 categories */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           {skillCategories.map((category, index) => (
-            <Card key={index} className="card-hover border-0 shadow-lg">
-              <CardContent className="p-8">
+            <Card key={index} className="card-hover border-0 shadow-lg bg-card">
+              <CardContent className="p-6">
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="p-3 rounded-lg bg-gradient-to-br from-primary/10 to-secondary/10">
+                  <div className="p-2.5 rounded-lg bg-gradient-to-br from-primary/10 to-secondary/10">
                     {category.icon}
                   </div>
-                  <h3 className="text-xl font-bold text-foreground">{category.title}</h3>
+                  <h3 className="text-lg font-bold text-foreground leading-tight">{category.title}</h3>
                 </div>
                 
                 <div className="space-y-4">
                   {category.skills.map((skill, skillIndex) => (
-                    <div key={skillIndex} className="space-y-2">
+                    <div key={skillIndex} className="space-y-1.5">
                       <div className="flex justify-between items-center">
-                        <span className="font-medium text-foreground">{skill.name}</span>
-                        <span className="text-sm text-muted-foreground">{skill.level}%</span>
+                        <span className="text-sm font-medium text-foreground">{skill.name}</span>
+                        <span className="text-xs text-muted-foreground">{skill.level}%</span>
                       </div>
-                      <div className="relative h-2 bg-muted rounded-full overflow-hidden">
+                      <div className="relative h-1 bg-muted rounded-full overflow-hidden">
                         <div 
-                          className="skill-bar h-full rounded-full transition-all duration-1000 ease-out"
+                          className="h-full bg-gradient-to-r from-primary to-secondary rounded-full transition-all duration-1000 ease-out"
                           style={{ width: `${skill.level}%` }}
                         ></div>
                       </div>
@@ -85,37 +98,19 @@ const Skills = () => {
           ))}
         </div>
 
-        {/* Additional Skills */}
+        {/* Specialized Skills */}
         <div className="max-w-4xl mx-auto">
-          <h3 className="text-2xl font-bold text-center mb-8">Additional Skills</h3>
+          <h3 className="text-2xl font-bold text-center mb-8">Core Expertise</h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {additionalSkills.map((skill, index) => (
-              <div key={index} className="card-hover bg-background border border-border rounded-xl p-6 text-center">
-                <div className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-lg mb-3">
+              <div key={index} className="card-hover bg-card border border-border rounded-xl p-6 text-center">
+                <div className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-lg mb-3 text-primary">
                   {skill.icon}
                 </div>
-                <p className="font-medium text-foreground">{skill.name}</p>
+                <p className="font-medium text-foreground text-sm">{skill.name}</p>
               </div>
             ))}
           </div>
-        </div>
-
-        {/* Skills Summary */}
-        <div className="max-w-4xl mx-auto mt-16">
-          <Card className="border-0 shadow-lg overflow-hidden">
-            <CardContent className="p-0">
-              <div className="bg-gradient-to-r from-primary to-secondary p-8 text-white text-center">
-                <h3 className="text-2xl font-bold mb-4">Primary Tech Stack</h3>
-                <div className="flex flex-wrap justify-center gap-3">
-                  {['HTML', 'CSS', 'JavaScript', 'React.js', 'Node.js', 'Express.js', 'PostgreSQL', 'Git/GitHub'].map((tech) => (
-                    <span key={tech} className="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium">
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </section>

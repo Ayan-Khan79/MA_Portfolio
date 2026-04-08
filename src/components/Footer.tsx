@@ -1,4 +1,4 @@
-import { Mail, Phone, Linkedin, Github, Heart } from 'lucide-react';
+import { Mail, Phone, Linkedin, Github, Heart, Globe } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -24,6 +24,7 @@ const Footer = () => {
   const quickLinks = [
     { name: "Home", href: "#home" },
     { name: "About", href: "#about" },
+    { name: "Freelance", href: "#freelance" }, // Added for easy access
     { name: "Experience", href: "#experience" },
     { name: "Skills", href: "#skills" },
     { name: "Services", href: "#services" },
@@ -39,24 +40,27 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-gradient-to-r from-primary to-secondary text-white">
-      <div className="container mx-auto px-6 py-12">
-        <div className="grid lg:grid-cols-4 gap-8">
+    <footer className="bg-gradient-to-r from-primary to-secondary text-white relative overflow-hidden">
+      {/* Subtle background decoration */}
+      <div className="absolute top-0 left-0 w-full h-1 bg-white/10"></div>
+      
+      <div className="container mx-auto px-6 py-16">
+        <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-12">
           {/* Brand Section */}
           <div className="lg:col-span-2">
-            <h3 className="text-2xl font-bold mb-4">Mohammad Ayan</h3>
-            <p className="text-white/80 mb-6 max-w-md leading-relaxed">
-              Final-year Computer Science student passionate about creating innovative web solutions. 
-              Always ready to take on new challenges and build amazing digital experiences.
+            <h3 className="text-3xl font-bold mb-5 tracking-tight">Mohammad Ayan</h3>
+            <p className="text-white/80 mb-8 max-w-md leading-relaxed text-lg">
+              Final-year Computer Science student specializing in the MERN stack and data-driven applications. 
+              Bridging the gap between high-performance backends and intuitive user interfaces.
             </p>
             <div className="flex gap-4">
               {socialLinks.map((link, index) => (
                 <a
                   key={index}
                   href={link.href}
-                  target={link.href.startsWith('http') ? '_blank' : undefined}
-                  rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                  className="p-3 bg-white/10 rounded-full hover:bg-white/20 transition-all hover:scale-110"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-3 bg-white/10 rounded-xl hover:bg-white/20 transition-all hover:-translate-y-1 shadow-lg backdrop-blur-sm"
                   aria-label={link.label}
                 >
                   {link.icon}
@@ -67,14 +71,18 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
-            <div className="space-y-2">
+            <h4 className="text-xl font-bold mb-6 relative inline-block">
+              Navigation
+              <span className="absolute -bottom-1 left-0 w-1/2 h-0.5 bg-white/30 rounded-full"></span>
+            </h4>
+            <div className="grid grid-cols-1 gap-3">
               {quickLinks.map((link, index) => (
                 <button
                   key={index}
                   onClick={() => scrollToSection(link.href)}
-                  className="block text-white/80 hover:text-white transition-colors text-left"
+                  className="group flex items-center gap-2 text-white/80 hover:text-white transition-all text-left"
                 >
+                  <span className="w-0 h-0.5 bg-white transition-all group-hover:w-2"></span>
                   {link.name}
                 </button>
               ))}
@@ -83,34 +91,47 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">Get In Touch</h4>
-            <div className="space-y-3">
+            <h4 className="text-xl font-bold mb-6 relative inline-block">
+              Get In Touch
+              <span className="absolute -bottom-1 left-0 w-1/2 h-0.5 bg-white/30 rounded-full"></span>
+            </h4>
+            <div className="space-y-5">
               <a 
                 href="mailto:mohammad.ayan9450@gmail.com"
-                className="flex items-center gap-3 text-white/80 hover:text-white transition-colors"
+                className="flex items-center gap-4 group"
               >
-                <Mail className="w-4 h-4" />
-                <span className="text-sm">mohammad.ayan9450@gmail.com</span>
+                <div className="p-2 bg-white/10 rounded-lg group-hover:bg-white/20 transition-colors">
+                  <Mail className="w-4 h-4" />
+                </div>
+                <span className="text-sm text-white/80 group-hover:text-white">mohammad.ayan9450@gmail.com</span>
               </a>
               <a 
                 href="tel:+917905212400"
-                className="flex items-center gap-3 text-white/80 hover:text-white transition-colors"
+                className="flex items-center gap-4 group"
               >
-                <Phone className="w-4 h-4" />
-                <span className="text-sm">+91 7905212400</span>
+                <div className="p-2 bg-white/10 rounded-lg group-hover:bg-white/20 transition-colors">
+                  <Phone className="w-4 h-4" />
+                </div>
+                <span className="text-sm text-white/80 group-hover:text-white">+91 7905212400</span>
               </a>
+              <div className="flex items-center gap-4 pt-2">
+                <div className="p-2 bg-white/10 rounded-lg">
+                  <Globe className="w-4 h-4" />
+                </div>
+                <span className="text-sm text-white/80 italic">Open for remote opportunities</span>
+              </div>
             </div>
           </div>
         </div>
 
         {/* Bottom Section */}
-        <div className="border-t border-white/20 mt-8 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-white/80 text-sm">
-              © {currentYear} Mohammad Ayan. All rights reserved.
+        <div className="border-t border-white/10 mt-16 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+            <p className="text-white/60 text-sm font-medium">
+              © {currentYear} Mohammad Ayan. Built with precision.
             </p>
-            <p className="flex items-center gap-2 text-white/80 text-sm">
-              Made with <Heart className="w-4 h-4 text-red-400" fill="currentColor" /> and React
+            <p className="flex items-center gap-2 text-white/60 text-sm font-medium">
+              Designed with <Heart className="w-4 h-4 text-rose-400 animate-pulse" fill="currentColor" /> in React & Tailwind
             </p>
           </div>
         </div>
