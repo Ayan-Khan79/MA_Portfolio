@@ -6,6 +6,9 @@ const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
+  // Your resume link constant for easy future updates
+  const RESUME_LINK = 'https://drive.google.com/file/d/1vlpOgfR3qiI-0xhU-u9NwFNWop4HS6RZ/view?usp=sharing';
+
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
@@ -25,7 +28,7 @@ const Navigation = () => {
   const navItems = [
     { label: 'Home', id: 'home' },
     { label: 'About', id: 'about' },
-    { label: 'Freelance', id: 'freelance' }, // Added and moved up for priority
+    { label: 'Freelance', id: 'freelance' },
     { label: 'Experience', id: 'experience' },
     { label: 'Skills', id: 'skills' },
     { label: 'Services', id: 'services' },
@@ -59,7 +62,7 @@ const Navigation = () => {
               variant="outline" 
               size="sm"
               className="btn-primary-gradient border-0 text-primary-foreground hover:scale-105 active:scale-95 transition-all shadow-lg"
-              onClick={() => window.open('https://drive.google.com/file/d/1_NBMRHSvUgWbQhLfiJJJiaeLXJLidsjb/view?usp=sharing', '_blank')}
+              onClick={() => window.open(RESUME_LINK, '_blank')}
             >
               <Download className="w-4 h-4 mr-2" />
               Download CV
@@ -92,7 +95,7 @@ const Navigation = () => {
                 variant="outline" 
                 size="lg"
                 className="btn-primary-gradient border-0 text-primary-foreground justify-center mt-4 shadow-xl"
-                onClick={() => window.open('https://drive.google.com/file/d/1_NBMRHSvUgWbQhLfiJJJiaeLXJLidsjb/view?usp=sharing', '_blank')}
+                onClick={() => window.open(RESUME_LINK, '_blank')}
               >
                 <Download className="w-5 h-5 mr-3" />
                 Download CV

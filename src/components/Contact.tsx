@@ -3,7 +3,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { Mail, Phone, Linkedin, Github, MapPin, Send, Clock, Sparkles } from 'lucide-react';
+import { Mail, Linkedin, Github, MapPin, Send, Clock, Sparkles, Loader2 } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
 const Contact = () => {
@@ -13,6 +13,8 @@ const Contact = () => {
     subject: '',
     message: ''
   });
+  
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
   const contactInfo = [
@@ -43,20 +45,38 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const subject = formData.subject || 'Inquiry: Full-Stack/Data Science Project';
-    const body = `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`;
-    const mailtoLink = `mailto:mohammad.ayan9450@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    
-    window.open(mailtoLink);
-    
-    toast({
-      title: "Opening Email Client",
-      description: "Thank you, Mohammad will get back to you shortly!",
-    });
-    
-    setFormData({ name: '', email: '', subject: '', message: '' });
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch('https://formspree.io/f/xqewapql', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      });
+
+      if (response.ok) {
+        toast({
+          title: "Message Sent Successfully!",
+          description: "Thank you! I'll get back to you in your inbox shortly.",
+        });
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      } else {
+        throw new Error('Submission failed');
+      }
+    } catch (error) {
+      toast({
+        variant: "destructive",
+        title: "Submission Error",
+        description: "Could not send message. Please try again later.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -80,7 +100,7 @@ const Contact = () => {
         </div>
 
         <div className="grid lg:grid-cols-5 gap-12 max-w-6xl mx-auto">
-          {/* Contact Information - 2 columns */}
+          {/* Contact Information */}
           <div className="lg:col-span-2 space-y-6">
             <div className="grid gap-4">
               {contactInfo.map((info, index) => (
@@ -126,7 +146,7 @@ const Contact = () => {
             </Card>
           </div>
 
-          {/* Contact Form - 3 columns */}
+          {/* Contact Form */}
           <Card className="lg:col-span-3 border-0 shadow-2xl rounded-3xl">
             <CardContent className="p-8 md:p-10">
               <h3 className="text-2xl font-bold text-foreground mb-8">Send a Brief</h3>
@@ -184,10 +204,20 @@ const Contact = () => {
                 <Button 
                   type="submit" 
                   size="lg" 
-                  className="w-full btn-primary-gradient border-0 text-primary-foreground h-14 rounded-2xl font-bold shadow-xl hover:translate-y-[-2px] transition-all"
+                  disabled={isSubmitting}
+                  className="w-full btn-primary-gradient border-0 text-primary-foreground h-14 rounded-2xl font-bold shadow-xl hover:translate-y-[-2px] transition-all disabled:opacity-70"
                 >
-                  <Send className="w-5 h-5 mr-3" />
-                  Launch Inquiry
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 className="w-5 h-5 mr-3 animate-spin" />
+                      Sending...
+                    </>
+                  ) : (
+                    <>
+                      <Send className="w-5 h-5 mr-3" />
+                      Launch Inquiry
+                    </>
+                  )}
                 </Button>
               </form>
             </CardContent>
